@@ -1,0 +1,170 @@
+[gd_scene load_steps=13 format=2]
+
+[ext_resource path="res://Code/Character/Character.tscn" type="PackedScene" id=1]
+[ext_resource path="res://Artwork/OfficeUp.png" type="Texture" id=2]
+[ext_resource path="res://Artwork/OfficeDown.png" type="Texture" id=3]
+[ext_resource path="res://Code/Office/Office.gd" type="Script" id=4]
+[ext_resource path="res://Code/Phone/Phone.tscn" type="PackedScene" id=5]
+[ext_resource path="res://Code/Passcode.tscn" type="PackedScene" id=6]
+[ext_resource path="res://Code/Office/Calculator.tscn" type="PackedScene" id=7]
+
+[sub_resource type="RectangleShape2D" id=1]
+extents = Vector2( 104.641, 165.574 )
+
+[sub_resource type="RectangleShape2D" id=2]
+extents = Vector2( 93.457, 154.27 )
+
+[sub_resource type="RectangleShape2D" id=3]
+extents = Vector2( 113.666, 73.8921 )
+
+[sub_resource type="RectangleShape2D" id=4]
+extents = Vector2( 47.8926, 80.3084 )
+
+[sub_resource type="RectangleShape2D" id=5]
+extents = Vector2( 84.1318, 56.0815 )
+
+[node name="Office" type="Node2D"]
+script = ExtResource( 4 )
+
+[node name="Down" type="Sprite" parent="."]
+position = Vector2( 1.16559, 300.037 )
+scale = Vector2( 0.5, 0.560376 )
+texture = ExtResource( 3 )
+__meta__ = {
+"_editor_description_": ""
+}
+
+[node name="AreaDown" type="Area2D" parent="Down"]
+position = Vector2( -2.33118, -563.205 )
+scale = Vector2( 2, 1.72269 )
+
+[node name="Collision" type="CollisionShape2D" parent="Down/AreaDown"]
+position = Vector2( -939.246, 332.147 )
+shape = SubResource( 1 )
+
+[node name="ColorRect" type="ColorRect" parent="Down/AreaDown"]
+visible = false
+modulate = Color( 1, 1, 1, 0.392157 )
+margin_left = -1083.0
+margin_top = 92.0
+margin_right = -800.0
+margin_bottom = 545.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Up" type="Sprite" parent="."]
+position = Vector2( 205.735, -360.621 )
+scale = Vector2( 0.5, 0.605771 )
+texture = ExtResource( 2 )
+__meta__ = {
+"_editor_description_": ""
+}
+
+[node name="AreaUp" type="Area2D" parent="Up"]
+position = Vector2( 1.90674, 546.338 )
+scale = Vector2( 2, 1.65079 )
+
+[node name="Collision" type="CollisionShape2D" parent="Up/AreaUp"]
+position = Vector2( -1149.9, -319.272 )
+shape = SubResource( 2 )
+
+[node name="ColorRect" type="ColorRect" parent="Up/AreaUp"]
+visible = false
+modulate = Color( 1, 1, 1, 0.392157 )
+margin_left = -1291.0
+margin_top = -575.0
+margin_right = -1006.0
+margin_bottom = -100.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="DoorArea" type="Area2D" parent="."]
+position = Vector2( -141.306, 200.159 )
+
+[node name="ColorRect" type="ColorRect" parent="DoorArea"]
+visible = false
+modulate = Color( 1, 1, 1, 0.392157 )
+margin_left = 96.0
+margin_top = -91.0
+margin_right = 326.0
+margin_bottom = 178.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="DoorArea"]
+position = Vector2( 209.537, 16.2709 )
+shape = SubResource( 3 )
+
+[node name="PhoneArea" type="Area2D" parent="."]
+position = Vector2( 1272.08, -179.298 )
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="Polygon" type="Polygon2D" parent="PhoneArea"]
+visible = false
+modulate = Color( 1, 1, 1, 0.392157 )
+position = Vector2( 292.145, 7.39471 )
+polygon = PoolVector2Array( 45.0918, 51.3626, 143.114, 51.3626, 143.907, -76.4231, 147.082, -77.2168, 147.082, -86.7412, 130.415, -128.41, 38.7422, -128.41, 40.7264, 9.69337 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="PhoneArea"]
+position = Vector2( 382.704, -23.4702 )
+shape = SubResource( 4 )
+
+[node name="Passcode" parent="." instance=ExtResource( 6 )]
+
+[node name="Phone" parent="." instance=ExtResource( 5 )]
+visible = false
+modulate = Color( 1, 1, 1, 0 )
+margin_left = 1068.82
+margin_top = -301.859
+margin_right = 1068.82
+margin_bottom = -301.859
+
+[node name="StaticBody2D" type="StaticBody2D" parent="."]
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="StaticBody2D"]
+polygon = PoolVector2Array( -1381.94, 602.29, -1598.56, -37.6617, 1817.92, -42.6177, 1377.88, 598.723, 1306.61, 518.542, 764.94, 520.324, 695.45, 415.198, 508.361, 422.325, 435.307, 375.998, -503.699, 377.78, -598.135, 514.978, -1089.91, 514.978, -1179, 541.705, -1328.97, 538.193 )
+
+[node name="CollisionPolygon2D2" type="CollisionPolygon2D" parent="StaticBody2D"]
+position = Vector2( 207.701, -1.68179 )
+polygon = PoolVector2Array( -1597.41, -34.2053, -1597.34, -580.63, 1598.71, -571.343, 1598.71, -37.3891, 1549.95, -121.823, 1400.11, -123.012, 1391.79, -259.771, 1124.22, -257.392, 1119.46, -219.338, 861.403, -216.959, 843.565, -269.284, 742.482, -269.284, 724.644, -252.636, 668.751, -251.446, 590.264, -131.336, 558.157, -131.311, 528.425, -174.148, -205.316, -159.877, -286.182, -186.04, -770.189, -183.662, -805.189, -130.244, -1287.47, -131.219, -1478.98, -108.541 )
+
+[node name="CollisionPolygon2D3" type="CollisionPolygon2D" parent="StaticBody2D"]
+polygon = PoolVector2Array( -1383.79, 597.787, -1383.52, 602.996, 1381.45, 605.14, 1381.11, 597.799 )
+
+[node name="CalculatorArea" type="Area2D" parent="."]
+position = Vector2( 549.335, 328.468 )
+
+[node name="ColorRect" type="ColorRect" parent="CalculatorArea"]
+visible = false
+modulate = Color( 1, 1, 1, 0.498039 )
+margin_left = -84.0
+margin_top = -54.0
+margin_right = 97.0
+margin_bottom = 78.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="CalculatorArea"]
+shape = SubResource( 5 )
+
+[node name="Calc" parent="." instance=ExtResource( 7 )]
+position = Vector2( 492.354, 326.32 )
+scale = Vector2( 0.4, 0.4 )
+
+[node name="Character" parent="." instance=ExtResource( 1 )]
+[connection signal="area_entered" from="Down/AreaDown" to="." method="_on_AreaDown_area_entered"]
+[connection signal="area_exited" from="Down/AreaDown" to="." method="_on_AreaDown_area_exited"]
+[connection signal="area_entered" from="Up/AreaUp" to="." method="_on_AreaUp_area_entered"]
+[connection signal="area_exited" from="Up/AreaUp" to="." method="_on_AreaUp_area_exited"]
+[connection signal="area_entered" from="DoorArea" to="." method="_on_DoorArea_area_entered"]
+[connection signal="area_exited" from="DoorArea" to="." method="_on_DoorArea_area_exited"]
+[connection signal="area_entered" from="PhoneArea" to="." method="_on_PhoneArea_area_entered"]
+[connection signal="area_exited" from="PhoneArea" to="." method="_on_PhoneArea_area_exited"]
+[connection signal="area_entered" from="CalculatorArea" to="." method="_on_CalculatorArea_area_entered"]
+[connection signal="area_exited" from="CalculatorArea" to="." method="_on_CalculatorArea_area_exited"]

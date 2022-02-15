@@ -1,0 +1,358 @@
+[gd_scene load_steps=20 format=2]
+
+[ext_resource path="res://Code/Character/Character.tscn" type="PackedScene" id=1]
+[ext_resource path="res://Code/City/City.gd" type="Script" id=2]
+[ext_resource path="res://Code/ATM/ATM.tscn" type="PackedScene" id=4]
+[ext_resource path="res://Code/Background/background.tscn" type="PackedScene" id=5]
+[ext_resource path="res://Artwork/shops/3.png" type="Texture" id=10]
+[ext_resource path="res://Artwork/shops/2.png" type="Texture" id=11]
+[ext_resource path="res://Artwork/shops/1.png" type="Texture" id=12]
+[ext_resource path="res://Artwork/shops/5.png" type="Texture" id=13]
+[ext_resource path="res://Artwork/shops/6.png" type="Texture" id=14]
+[ext_resource path="res://Artwork/shops/4.png" type="Texture" id=15]
+[ext_resource path="res://Code/City/Shop1.gd" type="Script" id=16]
+
+[sub_resource type="RectangleShape2D" id=1]
+extents = Vector2( 43.6129, 44.5379 )
+
+[sub_resource type="RectangleShape2D" id=2]
+extents = Vector2( 42.2573, 61.0306 )
+
+[sub_resource type="RectangleShape2D" id=3]
+extents = Vector2( 29.0088, 48.3463 )
+
+[sub_resource type="RectangleShape2D" id=4]
+extents = Vector2( 43.8269, 51.3779 )
+
+[sub_resource type="RectangleShape2D" id=5]
+extents = Vector2( 55.156, 51.2637 )
+
+[sub_resource type="RectangleShape2D" id=6]
+extents = Vector2( 30.793, 46.45 )
+
+[sub_resource type="RectangleShape2D" id=7]
+extents = Vector2( 61.0139, 52.1609 )
+
+[sub_resource type="RectangleShape2D" id=8]
+extents = Vector2( 50.6846, 46.1735 )
+
+[node name="City" type="Node"]
+script = ExtResource( 2 )
+
+[node name="background" parent="." instance=ExtResource( 5 )]
+position = Vector2( 521.931, 0 )
+
+[node name="background2" parent="." instance=ExtResource( 5 )]
+position = Vector2( -628.542, 7.1031 )
+
+[node name="background3" parent="." instance=ExtResource( 5 )]
+position = Vector2( 1549.32, 0 )
+
+[node name="background4" parent="." instance=ExtResource( 5 )]
+position = Vector2( 2568.7, 0 )
+
+[node name="Shop1" type="Node2D" parent="."]
+position = Vector2( -6000, 0 )
+script = ExtResource( 16 )
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="ShopImage" type="Sprite" parent="Shop1"]
+position = Vector2( 435.2, 225.75 )
+scale = Vector2( 0.68, 0.627027 )
+texture = ExtResource( 12 )
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="ChurchArea" type="Area2D" parent="Shop1/ShopImage"]
+position = Vector2( -330.626, 193.618 )
+scale = Vector2( 1.47059, 1.59483 )
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="ColorRect" type="ColorRect" parent="Shop1/ShopImage/ChurchArea"]
+visible = false
+modulate = Color( 1, 1, 1, 0.392157 )
+margin_left = 24.0
+margin_top = -28.0
+margin_right = 87.0
+margin_bottom = 66.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Collision" type="CollisionShape2D" parent="Shop1/ShopImage/ChurchArea"]
+position = Vector2( 53.9914, 26.9569 )
+shape = SubResource( 1 )
+
+[node name="StaticBody2D" type="StaticBody2D" parent="Shop1"]
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Shop1/StaticBody2D"]
+polygon = PoolVector2Array( 0.000488281, 455, 2.50397, 258.527, 869.708, 253.639, 868.512, 455.031, 358.024, 455.008, 311.698, 417.881, 218.94, 417.881, 176.992, 455 )
+
+[node name="Shop2" type="Node2D" parent="."]
+position = Vector2( -5127.28, 0 )
+script = ExtResource( 16 )
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="ShopImage" type="Sprite" parent="Shop2"]
+position = Vector2( 435.2, 225.75 )
+scale = Vector2( 0.68, 0.627027 )
+texture = ExtResource( 11 )
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="ApartmentArea" type="Area2D" parent="Shop2/ShopImage"]
+position = Vector2( 271.422, 209.412 )
+scale = Vector2( 1.47059, 1.59483 )
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="ColorRect" type="ColorRect" parent="Shop2/ShopImage/ApartmentArea"]
+visible = false
+modulate = Color( 1, 1, 1, 0.392157 )
+margin_left = 30.0
+margin_top = -62.0
+margin_right = 96.0
+margin_bottom = 45.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Collision" type="CollisionShape2D" parent="Shop2/ShopImage/ApartmentArea"]
+position = Vector2( 62.8003, -4.78714 )
+shape = SubResource( 2 )
+
+[node name="StaticBody2D" type="StaticBody2D" parent="Shop2"]
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Shop2/StaticBody2D"]
+polygon = PoolVector2Array( -3.27539, 455, -2.68539, 260.868, 875.154, 269.805, 875.139, 455.008, 792.279, 454.995, 741.279, 442.75, 727.223, 400.563, 640.918, 402.453, 626.413, 438.18, 374.445, 438.991, 340.221, 425.716, 253.608, 425.295, 198.953, 441.272, 83.7495, 443.374, 67.8105, 455.008 )
+
+[node name="Shop3" type="Node2D" parent="."]
+position = Vector2( -4251.73, 0 )
+script = ExtResource( 16 )
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="ShopImage" type="Sprite" parent="Shop3"]
+position = Vector2( 435.2, 225.75 )
+scale = Vector2( 0.68, 0.627027 )
+texture = ExtResource( 10 )
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="ATMArea" type="Area2D" parent="Shop3/ShopImage"]
+position = Vector2( 44.2075, 198.651 )
+scale = Vector2( 1.47059, 1.59483 )
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="ColorRect" type="ColorRect" parent="Shop3/ShopImage/ATMArea"]
+visible = false
+modulate = Color( 1, 1, 1, 0.392157 )
+margin_left = 44.0
+margin_top = 7.0
+margin_right = 95.0
+margin_bottom = 101.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Collision" type="CollisionShape2D" parent="Shop3/ShopImage/ATMArea"]
+position = Vector2( 69.9248, 54.5623 )
+shape = SubResource( 3 )
+
+[node name="ATM" parent="Shop3/ShopImage" instance=ExtResource( 4 )]
+visible = false
+
+[node name="StaticBody2D" type="StaticBody2D" parent="Shop3"]
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Shop3/StaticBody2D"]
+polygon = PoolVector2Array( -0.090332, 455, -0.852173, 330.683, 877.06, 333.54, 877.764, 455.008 )
+
+[node name="Shop4" type="Node2D" parent="."]
+position = Vector2( -3370.52, 0 )
+script = ExtResource( 16 )
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="ShopImage" type="Sprite" parent="Shop4"]
+position = Vector2( 435.2, 225.75 )
+scale = Vector2( 0.68, 0.627027 )
+texture = ExtResource( 15 )
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="BarArea" type="Area2D" parent="Shop4/ShopImage"]
+position = Vector2( -612.448, 239.794 )
+scale = Vector2( 1.47059, 1.59483 )
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="ColorRect" type="Polygon2D" parent="Shop4/ShopImage/BarArea"]
+visible = false
+modulate = Color( 1, 1, 1, 0.392157 )
+polygon = PoolVector2Array( 15.084, 74.7775, 15.2109, -4.50562, 16.8022, -9.80182, 19.6116, -15.4205, 23.7319, -20.29, 28.0667, -24.0513, 34.407, -27.722, 40.7476, -30.058, 46.7544, -31.0591, 55.3081, -31.5631, 62.7725, -30.7255, 71.4487, -29.3906, 78.4568, -26.3872, 83.4624, -23.0501, 88.1343, -19.0456, 92.8062, -13.7062, 95.4761, -8.36688, 95.4875, 74.7775 )
+
+[node name="Collision" type="CollisionShape2D" parent="Shop4/ShopImage/BarArea"]
+position = Vector2( 54.9861, 26.3255 )
+shape = SubResource( 4 )
+
+[node name="StaticBody2D" type="StaticBody2D" parent="Shop4"]
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Shop4/StaticBody2D"]
+polygon = PoolVector2Array( -2.88208, 455, -4.30444, 310.262, 879.805, 308.376, 881.787, 455.008, 858.326, 455, 832.938, 426.179, 342.167, 428.155, 274.09, 455 )
+
+[node name="Shop5" type="Node2D" parent="."]
+position = Vector2( -2480.68, 0 )
+script = ExtResource( 16 )
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="ShopImage" type="Sprite" parent="Shop5"]
+position = Vector2( 435.2, 225.75 )
+scale = Vector2( 0.68, 0.627027 )
+texture = ExtResource( 13 )
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="OfficeArea" type="Area2D" parent="Shop5/ShopImage"]
+position = Vector2( 346.204, 250.374 )
+scale = Vector2( 1.47059, 1.59483 )
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="ColorRect" type="ColorRect" parent="Shop5/ShopImage/OfficeArea"]
+visible = false
+modulate = Color( 1, 1, 1, 0.392157 )
+margin_left = 3.0
+margin_top = -35.0
+margin_right = 110.0
+margin_bottom = 67.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Collision" type="CollisionShape2D" parent="Shop5/ShopImage/OfficeArea"]
+position = Vector2( 56.0974, 17.584 )
+shape = SubResource( 5 )
+
+[node name="DinerArea" type="Area2D" parent="Shop5/ShopImage"]
+position = Vector2( -9.66846, 235.552 )
+scale = Vector2( 1.47059, 1.59483 )
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="ColorRect" type="ColorRect" parent="Shop5/ShopImage/DinerArea"]
+visible = false
+modulate = Color( 1, 1, 1, 0.392157 )
+margin_left = 11.0
+margin_top = -39.0
+margin_right = 66.0
+margin_bottom = 56.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Collision" type="CollisionShape2D" parent="Shop5/ShopImage/DinerArea"]
+position = Vector2( 38.2813, 10.3968 )
+shape = SubResource( 6 )
+
+[node name="StaticBody2D" type="StaticBody2D" parent="Shop5"]
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Shop5/StaticBody2D"]
+polygon = PoolVector2Array( -4.81909, 455, -4.65283, 347.856, 871.909, 352.643, 872.91, 455.008, 635.058, 455.008, 610.283, 447.779, 541.31, 448.969, 500.876, 431.13, 437.849, 431.13, 403.362, 446.59, 333.198, 446.59, 321.74, 455 )
+
+[node name="Shop6" type="Node2D" parent="."]
+position = Vector2( -1595.54, 0 )
+script = ExtResource( 16 )
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="ShopImage" type="Sprite" parent="Shop6"]
+position = Vector2( 435.2, 225.75 )
+scale = Vector2( 0.68, 0.627027 )
+texture = ExtResource( 14 )
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="ArcadeArea" type="Area2D" parent="Shop6/ShopImage"]
+position = Vector2( 410.007, 322.927 )
+scale = Vector2( 1.47059, 1.59483 )
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="ColorRect" type="Polygon2D" parent="Shop6/ShopImage/ArcadeArea"]
+visible = false
+modulate = Color( 1, 1, 1, 0.392157 )
+polygon = PoolVector2Array( -1.82959, 22.9553, 107.239, 22.9919, 107.239, -61.4229, 103.459, -69.9273, 99.0493, -75.282, 92.7498, -79.0617, 83.9302, -80.9516, 76.3706, -80.0067, 70.071, -77.8018, 65.6614, -74.022, 62.5115, -68.9824, 42.0378, -69.2974, 39.5181, -73.3921, 35.7383, -77.1719, 29.1238, -79.3767, 24.084, -80.3217, 16.8394, -80.3217, 12.1147, -78.7468, 7.70508, -75.9119, 3.61035, -72.4471, 1.72046, -70.2423, -1.1145, -63.3127 )
+
+[node name="Collision" type="CollisionShape2D" parent="Shop6/ShopImage/ArcadeArea"]
+position = Vector2( 53.4528, -23.3973 )
+shape = SubResource( 7 )
+
+[node name="CoffeeArea" type="Area2D" parent="Shop6/ShopImage"]
+position = Vector2( -438.998, 241.395 )
+scale = Vector2( 1.47059, 1.59483 )
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="ColorRect" type="ColorRect" parent="Shop6/ShopImage/CoffeeArea"]
+visible = false
+modulate = Color( 1, 1, 1, 0.392157 )
+margin_left = -7.0
+margin_top = -23.0
+margin_right = 84.0
+margin_bottom = 74.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Collision" type="CollisionShape2D" parent="Shop6/ShopImage/CoffeeArea"]
+position = Vector2( 38.0674, 31.6815 )
+shape = SubResource( 8 )
+
+[node name="StaticBody2D" type="StaticBody2D" parent="Shop6"]
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Shop6/StaticBody2D"]
+polygon = PoolVector2Array( -8.87903, 455, -9.57854, 344.994, 878.35, 346.597, 879.074, 455.008 )
+
+[node name="Character" parent="." instance=ExtResource( 1 )]
+
+[connection signal="area_entered" from="Shop1/ShopImage/ChurchArea" to="." method="_on_ChurchArea_area_entered"]
+[connection signal="area_exited" from="Shop1/ShopImage/ChurchArea" to="." method="_on_ChurchArea_area_exited"]
+[connection signal="area_entered" from="Shop2/ShopImage/ApartmentArea" to="." method="_on_ApartmentArea_area_entered"]
+[connection signal="area_exited" from="Shop2/ShopImage/ApartmentArea" to="." method="_on_ApartmentArea_area_exited"]
+[connection signal="area_entered" from="Shop3/ShopImage/ATMArea" to="." method="_on_ATMArea_area_entered"]
+[connection signal="area_exited" from="Shop3/ShopImage/ATMArea" to="." method="_on_ATMArea_area_exited"]
+[connection signal="area_entered" from="Shop4/ShopImage/BarArea" to="." method="_on_BarArea_area_entered"]
+[connection signal="area_exited" from="Shop4/ShopImage/BarArea" to="." method="_on_BarArea_area_exited"]
+[connection signal="area_entered" from="Shop5/ShopImage/OfficeArea" to="." method="_on_OfficeArea_area_entered"]
+[connection signal="area_exited" from="Shop5/ShopImage/OfficeArea" to="." method="_on_OfficeArea_area_exited"]
+[connection signal="area_entered" from="Shop5/ShopImage/DinerArea" to="." method="_on_DinerArea_area_entered"]
+[connection signal="area_exited" from="Shop5/ShopImage/DinerArea" to="." method="_on_DinerArea_area_exited"]
+[connection signal="area_entered" from="Shop6/ShopImage/ArcadeArea" to="." method="_on_ArcadeArea_area_entered"]
+[connection signal="area_exited" from="Shop6/ShopImage/ArcadeArea" to="." method="_on_ArcadeArea_area_exited"]
+[connection signal="area_entered" from="Shop6/ShopImage/CoffeeArea" to="." method="_on_CoffeeArea_area_entered"]
+[connection signal="area_exited" from="Shop6/ShopImage/CoffeeArea" to="." method="_on_CoffeeArea_area_exited"]

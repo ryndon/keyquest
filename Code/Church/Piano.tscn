@@ -1,0 +1,147 @@
+[gd_scene load_steps=6 format=2]
+
+[ext_resource path="res://montserrat/Montserrat-Bold.ttf" type="DynamicFontData" id=1]
+[ext_resource path="res://Artwork/grand_staff.png" type="Texture" id=2]
+[ext_resource path="res://Artwork/Piano.png" type="Texture" id=3]
+[ext_resource path="res://Code/Church/Piano.gd" type="Script" id=4]
+
+[sub_resource type="DynamicFont" id=1]
+font_data = ExtResource( 1 )
+
+[node name="Piano" type="Node2D"]
+position = Vector2( 512.78, 396.239 )
+scale = Vector2( 0.5, 0.5 )
+script = ExtResource( 4 )
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="Piano" type="Sprite" parent="."]
+position = Vector2( -2.1189, 1 )
+texture = ExtResource( 3 )
+
+[node name="MidC" type="ToolButton" parent="Piano"]
+margin_left = -74.4001
+margin_top = 109.238
+margin_right = -28.4001
+margin_bottom = 197.238
+custom_fonts/font = SubResource( 1 )
+custom_colors/font_color = Color( 0, 0, 0, 1 )
+text = "C"
+__meta__ = {
+"_edit_use_anchors_": false,
+"_editor_description_": ""
+}
+
+[node name="D" type="ToolButton" parent="Piano"]
+margin_left = -23.1906
+margin_top = 108.413
+margin_right = 22.8094
+margin_bottom = 196.413
+custom_fonts/font = SubResource( 1 )
+custom_colors/font_color = Color( 0, 0, 0, 1 )
+text = "D"
+__meta__ = {
+"_edit_use_anchors_": false,
+"_editor_description_": ""
+}
+
+[node name="E" type="ToolButton" parent="Piano"]
+margin_left = 25.4314
+margin_top = 109.238
+margin_right = 71.4314
+margin_bottom = 197.238
+custom_fonts/font = SubResource( 1 )
+custom_colors/font_color = Color( 0, 0, 0, 1 )
+text = "E"
+__meta__ = {
+"_edit_use_anchors_": false,
+"_editor_description_": ""
+}
+
+[node name="F" type="ToolButton" parent="Piano"]
+margin_left = 76.8156
+margin_top = 108.413
+margin_right = 122.816
+margin_bottom = 196.413
+custom_fonts/font = SubResource( 1 )
+custom_colors/font_color = Color( 0, 0, 0, 1 )
+text = "F"
+__meta__ = {
+"_edit_use_anchors_": false,
+"_editor_description_": ""
+}
+
+[node name="G" type="ToolButton" parent="Piano"]
+margin_left = 126.003
+margin_top = 109.206
+margin_right = 172.003
+margin_bottom = 197.206
+custom_fonts/font = SubResource( 1 )
+custom_colors/font_color = Color( 0, 0, 0, 1 )
+text = "G"
+__meta__ = {
+"_edit_use_anchors_": false,
+"_editor_description_": ""
+}
+
+[node name="A" type="ToolButton" parent="Piano"]
+margin_left = 176.213
+margin_top = 107.825
+margin_right = 222.213
+margin_bottom = 195.825
+custom_fonts/font = SubResource( 1 )
+custom_colors/font_color = Color( 0, 0, 0, 1 )
+text = "A"
+__meta__ = {
+"_edit_use_anchors_": false,
+"_editor_description_": ""
+}
+
+[node name="B" type="ToolButton" parent="Piano"]
+margin_left = 226.216
+margin_top = 107.825
+margin_right = 272.216
+margin_bottom = 195.825
+custom_fonts/font = SubResource( 1 )
+custom_colors/font_color = Color( 0, 0, 0, 1 )
+text = "B"
+__meta__ = {
+"_edit_use_anchors_": false,
+"_editor_description_": ""
+}
+
+[node name="HighC" type="ToolButton" parent="Piano"]
+margin_left = 276.0
+margin_top = 110.0
+margin_right = 322.0
+margin_bottom = 198.0
+custom_fonts/font = SubResource( 1 )
+custom_colors/font_color = Color( 0, 0, 0, 1 )
+text = "C"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Staff" type="Sprite" parent="."]
+position = Vector2( -11.8306, -439.764 )
+scale = Vector2( 1, 1.04721 )
+texture = ExtResource( 2 )
+
+[node name="ColorRect" type="ColorRect" parent="Staff"]
+show_behind_parent = true
+margin_left = -417.807
+margin_top = -165.918
+margin_right = 421.193
+margin_bottom = 174.082
+__meta__ = {
+"_edit_use_anchors_": false
+}
+[connection signal="pressed" from="Piano/MidC" to="." method="_on_MidC_pressed"]
+[connection signal="pressed" from="Piano/D" to="." method="_on_D_pressed"]
+[connection signal="pressed" from="Piano/E" to="." method="_on_E_pressed"]
+[connection signal="pressed" from="Piano/F" to="." method="_on_F_pressed"]
+[connection signal="pressed" from="Piano/G" to="." method="_on_G_pressed"]
+[connection signal="pressed" from="Piano/A" to="." method="_on_A_pressed"]
+[connection signal="pressed" from="Piano/B" to="." method="_on_B_pressed"]
+[connection signal="pressed" from="Piano/HighC" to="." method="_on_HighC_pressed"]

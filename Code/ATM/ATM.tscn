@@ -1,0 +1,274 @@
+[gd_scene load_steps=9 format=2]
+
+[ext_resource path="res://montserrat/Montserrat-Bold.ttf" type="DynamicFontData" id=1]
+[ext_resource path="res://Code/ATM/ATM.gd" type="Script" id=2]
+[ext_resource path="res://Artwork/ATM_Machine.png" type="Texture" id=3]
+[ext_resource path="res://Artwork/exit.png" type="Texture" id=4]
+[ext_resource path="res://Code/ATM/ColorRect.gd" type="Script" id=5]
+[ext_resource path="res://Code/ATM/Button1.tscn" type="PackedScene" id=6]
+
+[sub_resource type="DynamicFont" id=2]
+resource_local_to_scene = true
+size = 30
+font_data = ExtResource( 1 )
+
+[sub_resource type="DynamicFont" id=1]
+size = 20
+font_data = ExtResource( 1 )
+
+[node name="ATM" type="Sprite"]
+position = Vector2( -26.445, 150 )
+scale = Vector2( 0.6, 0.6 )
+texture = ExtResource( 3 )
+script = ExtResource( 2 )
+
+[node name="HBox" type="HBoxContainer" parent="."]
+margin_left = -205.0
+margin_top = -242.0
+margin_right = 197.0
+margin_bottom = -202.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Amount" type="Label" parent="HBox"]
+margin_top = 1.0
+margin_bottom = 39.0
+custom_fonts/font = SubResource( 2 )
+custom_colors/font_color = Color( 0, 0, 0, 1 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Message" type="Label" parent="."]
+margin_left = -177.005
+margin_top = -392.409
+margin_right = 123.995
+margin_bottom = -308.409
+custom_fonts/font = SubResource( 1 )
+custom_colors/font_color = Color( 0, 0, 0, 1 )
+text = "Account Balance: $10,000.00
+
+Enter Dollar Amount:"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Button1" parent="." instance=ExtResource( 6 )]
+
+[node name="Button2" type="TextureButton" parent="."]
+margin_left = -114.641
+margin_top = -63.9966
+margin_right = -15.6406
+margin_bottom = 11.0034
+focus_mode = 1
+mouse_default_cursor_shape = 2
+enabled_focus_mode = 1
+
+[node name="ColorRect" type="Polygon2D" parent="Button2"]
+visible = false
+modulate = Color( 1, 1, 1, 0.611765 )
+position = Vector2( -1.3559, 2.52888 )
+polygon = PoolVector2Array( -1.16077, 83.9781, 4.45154, 90.5258, 87.2331, 90.9935, 97.0546, 84.9135, 99.3931, 4.9381, 89.1039, -1.6096, 14.7408, -1.14192, 4.45154, 4.4704 )
+script = ExtResource( 5 )
+
+[node name="Button3" type="TextureButton" parent="."]
+margin_left = 7.47168
+margin_top = -60.2509
+margin_right = 106.472
+margin_bottom = 14.7491
+focus_mode = 1
+mouse_default_cursor_shape = 2
+enabled_focus_mode = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="ColorRect" type="Polygon2D" parent="Button3"]
+visible = false
+modulate = Color( 1, 1, 1, 0.611765 )
+position = Vector2( 2.73358, -4.73218 )
+polygon = PoolVector2Array( -1.16077, 83.9781, 6.70032, 94.4209, 89.7315, 93.7966, 97.0546, 84.9135, 99.3931, 4.9381, 89.1039, -1.6096, 14.7408, -1.14192, 4.45154, 4.4704 )
+script = ExtResource( 5 )
+
+[node name="Button4" type="TextureButton" parent="."]
+margin_left = -247.241
+margin_top = 34.1425
+margin_right = -148.241
+margin_bottom = 109.142
+focus_mode = 1
+mouse_default_cursor_shape = 2
+enabled_focus_mode = 1
+
+[node name="ColorRect" type="Polygon2D" parent="Button4"]
+visible = false
+modulate = Color( 1, 1, 1, 0.611765 )
+position = Vector2( 2.20956, -4.39615 )
+polygon = PoolVector2Array( -4.01248, 92.7113, 0.981873, 99.5786, 89.0074, 99.5786, 97.1232, 89.5899, 99.3931, 4.9381, 90.8803, 0.940033, 11.5949, 1.56433, 1.60614, 9.68018 )
+script = ExtResource( 5 )
+
+[node name="Button5" type="TextureButton" parent="."]
+margin_left = -117.637
+margin_top = 34.1425
+margin_right = -18.6372
+margin_bottom = 109.142
+focus_mode = 1
+mouse_default_cursor_shape = 2
+enabled_focus_mode = 1
+
+[node name="ColorRect" type="Polygon2D" parent="Button5"]
+visible = false
+modulate = Color( 1, 1, 1, 0.611765 )
+position = Vector2( 0.527756, -3.28378 )
+polygon = PoolVector2Array( -2.08138, 90.9747, 6.03444, 99.0905, 87.817, 99.7148, 99.0544, 93.4719, 99.3931, 4.9381, 89.1039, -1.6096, 14.7408, -1.14192, 1.66437, 7.94351 )
+script = ExtResource( 5 )
+
+[node name="Button6" type="TextureButton" parent="."]
+margin_left = 10.468
+margin_top = 34.8916
+margin_right = 109.468
+margin_bottom = 109.892
+focus_mode = 1
+mouse_default_cursor_shape = 2
+enabled_focus_mode = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="ColorRect" type="Polygon2D" parent="Button6"]
+visible = false
+modulate = Color( 1, 1, 1, 0.611765 )
+position = Vector2( -1.03999, 3.10678 )
+polygon = PoolVector2Array( -1.16077, 83.9781, 4.45154, 90.5258, 91.7574, 93.1994, 102.37, 85.0836, 102.37, 0.803833, 89.8845, -6.68771, 9.35046, -6.06342, 0.610329, 2.05243 )
+script = ExtResource( 5 )
+
+[node name="Button7" type="TextureButton" parent="."]
+margin_left = -256.119
+margin_top = 135.0
+margin_right = -157.119
+margin_bottom = 216.0
+focus_mode = 1
+mouse_default_cursor_shape = 2
+enabled_focus_mode = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="ColorRect" type="Polygon2D" parent="Button7"]
+visible = false
+modulate = Color( 1, 1, 1, 0.611765 )
+position = Vector2( 1.07623, -1.80359 )
+polygon = PoolVector2Array( -5.86285, 98.5129, 3.50159, 104.132, 91.5271, 104.756, 99.6429, 97.2643, 102.14, 4.86865, 89.1039, -1.6096, 14.7408, -1.14192, 2.87726, 4.86865 )
+script = ExtResource( 5 )
+
+[node name="Button8" type="TextureButton" parent="."]
+margin_left = -121.0
+margin_top = 135.0
+margin_right = -22.0
+margin_bottom = 218.0
+focus_mode = 1
+mouse_default_cursor_shape = 2
+enabled_focus_mode = 1
+
+[node name="ColorRect" type="Polygon2D" parent="Button8"]
+visible = false
+modulate = Color( 1, 1, 1, 0.611765 )
+position = Vector2( 0.553665, -0.691193 )
+polygon = PoolVector2Array( -2.49016, 94.9033, 5.00139, 103.019, 91.7783, 105.516, 100.518, 98.0247, 99.3931, 4.9381, 89.1039, -1.6096, 6.87425, -0.6138, -1.24159, 4.38055 )
+script = ExtResource( 5 )
+
+[node name="Button9" type="TextureButton" parent="."]
+margin_left = 12.0
+margin_top = 134.0
+margin_right = 117.0
+margin_bottom = 219.0
+focus_mode = 1
+mouse_default_cursor_shape = 2
+enabled_focus_mode = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="ColorRect" type="Polygon2D" parent="Button9"]
+visible = false
+modulate = Color( 1, 1, 1, 0.611765 )
+position = Vector2( -0.0747871, 1.4212 )
+polygon = PoolVector2Array( -1.26264, 95.0395, 9.97464, 103.155, 98.0002, 101.907, 105.492, 95.6638, 102.995, 7.01395, 94.2544, -1.72617, 6.85315, -1.72617, -1.88698, 7.01395 )
+script = ExtResource( 5 )
+
+[node name="Button0" type="TextureButton" parent="."]
+margin_left = -123.0
+margin_top = 248.0
+margin_right = -24.0
+margin_bottom = 331.0
+focus_mode = 1
+mouse_default_cursor_shape = 2
+enabled_focus_mode = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="ColorRect" type="Polygon2D" parent="Button0"]
+visible = false
+modulate = Color( 1, 1, 1, 0.611765 )
+position = Vector2( -1.89581, -0.229797 )
+polygon = PoolVector2Array( -3.52919, 103.063, 8.97081, 109.73, 95.6375, 108.896, 104.804, 100.563, 104.804, 3.89648, 94.8041, -4.43686, 8.13748, -5.27017, -1.02919, 4.72983 )
+script = ExtResource( 5 )
+
+[node name="ButtonBack" type="TextureButton" parent="."]
+margin_left = 132.0
+margin_top = -63.0
+margin_right = 230.0
+margin_bottom = 15.0
+focus_mode = 1
+mouse_default_cursor_shape = 2
+enabled_focus_mode = 1
+
+[node name="ColorRect" type="Polygon2D" parent="ButtonBack"]
+visible = false
+modulate = Color( 1, 1, 1, 0.611765 )
+position = Vector2( 3.3979, 0.419922 )
+polygon = PoolVector2Array( -1.16077, 83.9781, 4.49374, 90.7693, 86.9006, 92.6422, 97.5137, 87.6478, 90.0221, 5.24094, 78.1605, -1.62631, 2.62083, -1.00201, -2.99782, 5.86523 )
+script = ExtResource( 5 )
+
+[node name="ButtonEnter" type="TextureButton" parent="."]
+margin_left = 151.06
+margin_top = 136.822
+margin_right = 249.06
+margin_bottom = 344.822
+focus_mode = 1
+mouse_default_cursor_shape = 2
+enabled_focus_mode = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="ColorRect" type="Polygon2D" parent="ButtonEnter"]
+visible = false
+modulate = Color( 1, 1, 1, 0.611765 )
+position = Vector2( 14.3718, 59.7794 )
+polygon = PoolVector2Array( -10.5234, 150.065, -0.52343, 158.399, 91.1432, 157.565, 100.31, 151.732, 78.6432, -55.768, 65.3099, -63.268, -11.3568, -62.4347, -19.6901, -54.1013 )
+script = ExtResource( 5 )
+
+[node name="ATMExit" type="ToolButton" parent="."]
+margin_left = 224.759
+margin_top = -404.498
+margin_right = 271.759
+margin_bottom = -363.498
+icon = ExtResource( 4 )
+flat = false
+expand_icon = true
+__meta__ = {
+"_edit_use_anchors_": false
+}
+[connection signal="pressed" from="Button2" to="." method="_on_Button2_pressed"]
+[connection signal="pressed" from="Button3" to="." method="_on_Button3_pressed"]
+[connection signal="pressed" from="Button4" to="." method="_on_Button4_pressed"]
+[connection signal="pressed" from="Button5" to="." method="_on_Button5_pressed"]
+[connection signal="pressed" from="Button6" to="." method="_on_Button6_pressed"]
+[connection signal="pressed" from="Button7" to="." method="_on_Button7_pressed"]
+[connection signal="pressed" from="Button8" to="." method="_on_Button8_pressed"]
+[connection signal="pressed" from="Button9" to="." method="_on_Button9_pressed"]
+[connection signal="pressed" from="Button0" to="." method="_on_Button0_pressed"]
+[connection signal="pressed" from="ButtonBack" to="." method="_on_ButtonBack_pressed"]
+[connection signal="pressed" from="ButtonEnter" to="." method="_on_ButtonEnter_pressed"]

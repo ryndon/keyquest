@@ -1,0 +1,18 @@
+[gd_scene load_steps=3 format=2]
+
+[ext_resource path="res://Artwork/buildings.png" type="Texture" id=1]
+[ext_resource path="res://Code/Background/background.tscn" type="PackedScene" id=2]
+
+[node name="ParallaxBackground" type="ParallaxBackground"]
+layer = 0
+follow_viewport_enable = true
+scroll_base_scale = Vector2( 0.8, 0.8 )
+
+[node name="ParallaxLayer" type="ParallaxLayer" parent="."]
+
+[node name="background" parent="ParallaxLayer" instance=ExtResource( 2 )]
+
+[node name="buildings" type="Sprite" parent="ParallaxLayer"]
+position = Vector2( 512.698, 238.292 )
+scale = Vector2( 0.580199, 0.625481 )
+texture = ExtResource( 1 )

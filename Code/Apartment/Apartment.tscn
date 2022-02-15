@@ -1,0 +1,41 @@
+[gd_scene load_steps=5 format=2]
+
+[ext_resource path="res://Code/Apartment/Apartment.gd" type="Script" id=1]
+[ext_resource path="res://Code/Character/Character.tscn" type="PackedScene" id=2]
+[ext_resource path="res://Artwork/Apartment.png" type="Texture" id=3]
+
+[sub_resource type="RectangleShape2D" id=1]
+extents = Vector2( 46.5122, 199.552 )
+
+[node name="Apartment" type="Node2D"]
+script = ExtResource( 1 )
+
+[node name="Sprite" type="Sprite" parent="."]
+position = Vector2( 29.9661, 301.592 )
+scale = Vector2( 0.5, 0.560436 )
+texture = ExtResource( 3 )
+
+[node name="DoorArea" type="Area2D" parent="."]
+position = Vector2( 3030.46, 88.4283 )
+
+[node name="Polygon" type="Polygon2D" parent="DoorArea"]
+visible = false
+modulate = Color( 1, 1, 1, 0.392157 )
+polygon = PoolVector2Array( -27.1323, -29.2892, 71.9746, -54.7738, 68.199, 487.954, -26.1885, 352.036 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="DoorArea"]
+position = Vector2( 48.1152, 180.645 )
+shape = SubResource( 1 )
+
+[node name="Character" parent="." instance=ExtResource( 2 )]
+position = Vector2( 2923.07, 463.791 )
+
+[node name="StaticBody2D" type="StaticBody2D" parent="."]
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="StaticBody2D"]
+polygon = PoolVector2Array( -2825.07, 604.328, -2827.19, 0.434296, 3106.14, -4.17906, 3104.64, 601.137, 2972.79, 394.371, 2842.43, 397.367, 2842.43, 427.333, 2605.7, 428.832, 2057.32, 425.835, 1991.4, 520.228, 1956.87, 520.831, 1864.04, 400.364, 1649.78, 403.36, 1650.2, 500.57, 1627.2, 530.796, 1533.53, 548.589, 1381.58, 548.696, 1239.25, 551.693, 1174.38, 539.461, 1164.46, 524.381, 1164.33, 469.286, 698.356, 464.791, 251.86, 463.292, 209.908, 520.228, 180.006, 521.057, 112.518, 421.34, -122.717, 421.34, -157.178, 395.868, -351.958, 398.865, -429.87, 409.353, -456.839, 409.353, -474.819, 394.37, -600.677, 392.872, -639.633, 499.252, -735.447, 503.858, -774.481, 391.374, -918.318, 392.872, -942.291, 443.814, -1516.14, 446.811, -1567.08, 514.235, -1596.79, 516.362, -1649.49, 446.811, -1766.36, 448.309, -1775.35, 404.858, -2223.61, 397.34, -2665.84, 399.23, -2686.32, 424.336, -2368.68, 425.835, -2361.19, 500.75, -2376.17, 547.198, -2776.22, 547.198 )
+
+[node name="CollisionPolygon2D2" type="CollisionPolygon2D" parent="StaticBody2D"]
+polygon = PoolVector2Array( -2824.05, 596.952, -2822.39, 658.004, 3119.9, 649.014, 3119.03, 595.274 )
+[connection signal="area_entered" from="DoorArea" to="." method="_on_DoorArea_area_entered"]
+[connection signal="area_exited" from="DoorArea" to="." method="_on_DoorArea_area_exited"]

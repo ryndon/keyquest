@@ -1,0 +1,22 @@
+[gd_scene load_steps=2 format=2]
+
+[ext_resource path="res://Code/ATM/ColorRect.gd" type="Script" id=1]
+
+[node name="Button1" type="TextureButton"]
+margin_left = -239.0
+margin_top = -61.0
+margin_right = -140.0
+margin_bottom = 14.0
+focus_mode = 1
+mouse_default_cursor_shape = 2
+button_mask = 3
+enabled_focus_mode = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="ColorRect" type="Polygon2D" parent="."]
+visible = false
+modulate = Color( 1, 1, 1, 0.611765 )
+polygon = PoolVector2Array( -1.16077, 83.9781, 4.45154, 90.5258, 87.2331, 90.9935, 97.0546, 84.9135, 99.3931, 4.9381, 89.1039, -1.6096, 14.7408, -1.14192, 4.45154, 4.4704 )
+script = ExtResource( 1 )

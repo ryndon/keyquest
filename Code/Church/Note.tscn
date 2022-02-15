@@ -1,0 +1,10 @@
+[gd_scene load_steps=2 format=2]
+
+[ext_resource path="res://Artwork/quarterNote.png" type="Texture" id=1]
+
+[node name="Note" type="Node2D"]
+scale = Vector2( 0.15, 0.15 )
+
+[node name="Sprite" type="Sprite" parent="."]
+position = Vector2( -10.1001, -176.729 )
+texture = ExtResource( 1 )

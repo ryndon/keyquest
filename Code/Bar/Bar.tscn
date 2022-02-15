@@ -1,0 +1,51 @@
+[gd_scene load_steps=5 format=2]
+
+[ext_resource path="res://Code/Character/Character.tscn" type="PackedScene" id=1]
+[ext_resource path="res://Artwork/Bar.png" type="Texture" id=2]
+[ext_resource path="res://Code/Bar/Bar.gd" type="Script" id=3]
+
+[sub_resource type="RectangleShape2D" id=1]
+extents = Vector2( 108.515, 124.875 )
+
+[node name="Bar" type="Node2D"]
+script = ExtResource( 3 )
+
+[node name="Sprite" type="Sprite" parent="."]
+position = Vector2( -0.953369, 302.467 )
+scale = Vector2( 0.5, 0.563929 )
+texture = ExtResource( 2 )
+__meta__ = {
+"_editor_description_": ""
+}
+
+[node name="DoorArea" type="Area2D" parent="."]
+position = Vector2( -2440.25, 479.648 )
+
+[node name="ColorRect" type="ColorRect" parent="DoorArea"]
+visible = false
+modulate = Color( 1, 1, 1, 0.392157 )
+margin_left = 60.0
+margin_top = -389.0
+margin_right = 272.0
+margin_bottom = 35.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="DoorArea"]
+position = Vector2( 164.814, -165.283 )
+shape = SubResource( 1 )
+
+[node name="Character" parent="." instance=ExtResource( 1 )]
+position = Vector2( -14.2542, 308.874 )
+scale = Vector2( 0.5, 0.563846 )
+
+[node name="StaticBody2D" type="StaticBody2D" parent="."]
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="StaticBody2D"]
+polygon = PoolVector2Array( -2630.64, 599.475, -2632.64, 55.4755, 2679.36, 73.4755, 2685.36, 603.475, 2615.36, 537.475, 2149.36, 545.475, 2101.36, 427.475, 2021.36, 425.475, 1993.36, 453.475, 1817.36, 461.475, 1765.36, 427.475, 1193.36, 435.475, 1125.36, 485.475, 1067.36, 487.475, 1033.36, 399.475, 569.36, 411.475, 549.36, 463.475, 211.36, 463.475, 153.36, 479.475, -174.64, 481.475, -320.023, 513.123, -654.64, 517.475, -780.64, 479.475, -1118.64, 479.475, -1204.64, 413.475, -1904.64, 409.475, -1982.64, 509.475, -2556.64, 517.475 )
+
+[node name="CollisionPolygon2D2" type="CollisionPolygon2D" parent="StaticBody2D"]
+polygon = PoolVector2Array( -2631.07, 596.217, -2631.07, 605.433, 2687.99, 608.263, 2686.73, 596.49 )
+[connection signal="area_entered" from="DoorArea" to="." method="_on_DoorArea_area_entered"]
+[connection signal="area_exited" from="DoorArea" to="." method="_on_DoorArea_area_exited"]

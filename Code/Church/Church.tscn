@@ -1,0 +1,98 @@
+[gd_scene load_steps=9 format=2]
+
+[ext_resource path="res://Code/Character/Character.tscn" type="PackedScene" id=1]
+[ext_resource path="res://Artwork/Church.png" type="Texture" id=2]
+[ext_resource path="res://Code/Church/Church.gd" type="Script" id=3]
+[ext_resource path="res://Code/Church/Bible.tscn" type="PackedScene" id=4]
+[ext_resource path="res://Code/Church/Piano.tscn" type="PackedScene" id=6]
+
+[sub_resource type="RectangleShape2D" id=1]
+extents = Vector2( 91.7623, 217.7 )
+
+[sub_resource type="RectangleShape2D" id=2]
+extents = Vector2( 83.7885, 66.6308 )
+
+[sub_resource type="RectangleShape2D" id=3]
+extents = Vector2( 102.453, 76.72 )
+
+[node name="Church" type="Node2D"]
+script = ExtResource( 3 )
+
+[node name="Sprite" type="Sprite" parent="."]
+position = Vector2( -0.953369, 300.827 )
+scale = Vector2( 0.5, 0.571554 )
+texture = ExtResource( 2 )
+__meta__ = {
+"_editor_description_": ""
+}
+
+[node name="DoorArea" type="Area2D" parent="."]
+position = Vector2( -1676.61, 201.522 )
+
+[node name="Polygon" type="Polygon2D" parent="DoorArea"]
+visible = false
+modulate = Color( 1, 1, 1, 0.392157 )
+polygon = PoolVector2Array( -7.79858, 401.391, -6.90759, 41.4675, -3.34412, 20.0859, 2.00134, 3.15883, 11.8011, -12.8773, 23.3829, -23.5681, 35.8555, -28.9135, 47.4371, -30.6953, 61.6915, -26.2408, 70.6005, -18.2227, 75.9459, -6.64104, 81.2914, 4.04973, 85.7457, 17.4132, 86.6367, 282.901 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="DoorArea"]
+position = Vector2( 16.4812, 189.536 )
+shape = SubResource( 1 )
+
+[node name="BibleArea" type="Area2D" parent="."]
+position = Vector2( 345.078, 230.421 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="BibleArea"]
+position = Vector2( 89.2533, 66.937 )
+shape = SubResource( 2 )
+
+[node name="ColorRect" type="ColorRect" parent="BibleArea"]
+visible = false
+modulate = Color( 1, 1, 1, 0.392157 )
+margin_left = 9.0
+margin_top = 12.0
+margin_right = 163.0
+margin_bottom = 127.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="PianoArea" type="Area2D" parent="."]
+position = Vector2( 1115.23, 270.318 )
+
+[node name="CollisionPolygon2D" type="CollisionShape2D" parent="PianoArea"]
+position = Vector2( -0.422058, 25.1605 )
+shape = SubResource( 3 )
+
+[node name="Polygon" type="Polygon2D" parent="PianoArea"]
+visible = false
+modulate = Color( 1, 1, 1, 0.466667 )
+position = Vector2( 0.103622, -0.353779 )
+scale = Vector2( 0.99278, 0.989927 )
+polygon = PoolVector2Array( -7.39148, -190.887, 3.6886, -189.877, 105.423, -108.052, 110.049, 38.175, 104.919, 172.777, -109.126, 172.777, -112.622, 37.8531, -108.429, -109.307 )
+
+[node name="Character" parent="." instance=ExtResource( 1 )]
+position = Vector2( -1540.4, 521.019 )
+
+[node name="Bible" parent="." instance=ExtResource( 4 )]
+visible = false
+modulate = Color( 1, 1, 1, 0 )
+
+[node name="StaticBody2D" type="StaticBody2D" parent="."]
+visible = false
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="StaticBody2D"]
+polygon = PoolVector2Array( -1688.88, 140.379, 1721.9, 128.885, 1721.9, 611.544, 1639.96, 512.767, 1385.17, 515.012, 1339.15, 384.806, 1233.63, 385.929, 1216.8, 444.297, 1006.9, 442.052, 991.182, 389.296, 103.314, 387.051, 62.905, 468.991, -1327.83, 468.991, -1344.66, 374.704, -1510.79, 385.929, -1693.75, 608.176 )
+
+[node name="CollisionPolygon2D2" type="CollisionPolygon2D" parent="StaticBody2D"]
+polygon = PoolVector2Array( -1696.25, 597, -1696.25, 610.75, 1720.4, 610.222, 1710.95, 597.308 )
+
+[node name="Piano" parent="." instance=ExtResource( 6 )]
+visible = false
+modulate = Color( 1, 1, 1, 0 )
+position = Vector2( 1112.14, 426.443 )
+[connection signal="area_entered" from="DoorArea" to="." method="_on_DoorArea_area_entered"]
+[connection signal="area_exited" from="DoorArea" to="." method="_on_DoorArea_area_exited"]
+[connection signal="area_entered" from="BibleArea" to="." method="_on_BibleArea_area_entered"]
+[connection signal="area_exited" from="BibleArea" to="." method="_on_BibleArea_area_exited"]
+[connection signal="area_entered" from="PianoArea" to="." method="_on_PianoArea_area_entered"]
+[connection signal="area_exited" from="PianoArea" to="." method="_on_PianoArea_area_exited"]
